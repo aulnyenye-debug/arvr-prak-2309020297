@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Praktikum 1 - Scene Pertama</title>
-<script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Praktikum 1 - Scene Perkenalan Diri</title>
+  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 </head>
 <body>
-<a-scene>
-<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5"
-color="#FFC65D"></a-cylinder>
-<a-plane position="0 0 -4" rotation="-90 0 0" width="6" height="6"
-color="#7BC8A4"></a-plane>
-<a-sky color="#ECECEC"></a-sky>
-</a-scene>
+  <a-scene>
+    <!-- 1. Minimal 3 Objek Primitif Berbeda -->
+    <!-- Objek 1 (Box/Kubus) dengan animasi putar -->
+    <a-box position="-1.5 0.5 -3" rotation="0 45 0" color="#4CC3D9"
+           animation="property: rotation; to: 0 405 0; loop: true; dur: 6000; easing: linear"></a-box>
+    
+    <!-- Objek 2 (Sphere/Bola) -->
+    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+    
+    <!-- Objek 3 (Cylinder/Tabung) -->
+    <a-cylinder position="1.5 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+
+    <!-- 2. Teks Nama & NIM -->
+    <a-text value="Dinda Aulia - 2309020297" position="0 2.8 -3" align="center" color="#222222" width="6"></a-text>
+
+    <!-- 3. Lantai (a-plane) dan Langit (a-sky) -->
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
+    <a-sky color="#ECECEC"></a-sky>
+  </a-scene>
 </body>
 </html>
