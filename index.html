@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Praktikum 1 - Scene Perkenalan Diri</title>
+  <title>Praktikum 1 - Scene Perkenalan Diri Kustom</title>
   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
 </head>
 <body>
   <a-scene>
-    <!-- 1. Minimal 3 Objek Primitif Berbeda -->
-    <!-- Objek 1 (Box/Kubus) dengan animasi putar -->
-    <a-box position="-1.5 0.5 -3" rotation="0 45 0" color="#4CC3D9"
-           animation="property: rotation; to: 0 405 0; loop: true; dur: 6000; easing: linear"></a-box>
+    <!-- 1. Tiga Objek Primitif Unik & Berbeda -->
+    <!-- Objek 1: Donat (Torus) Berwarna Ungu dengan Animasi Putar -->
+    <a-torus position="-1.5 1 -3" radius="0.8" radius-tubular="0.2" color="#9b59b6" 
+           animation="property: rotation; to: 360 360 0; loop: true; dur: 7000; easing: linear"></a-torus>
     
-    <!-- Objek 2 (Sphere/Bola) -->
-    <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+    <!-- Objek 2: Kerucut (Cone) Berwarna Oranye Terang -->
+    <a-cone position="0 1 -4" radius-bottom="0.9" height="1.8" color="#e67e22"></a-cone>
     
-    <!-- Objek 3 (Cylinder/Tabung) -->
-    <a-cylinder position="1.5 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    <!-- Objek 3: Kotak Panjang (Box) Berwarna Hijau Tosca -->
+    <a-box position="1.5 0.75 -3" width="1" height="1.5" depth="1" color="#1abc9c"
+           animation="property: position; to: 1.5 1.2 -3; dir: alternate; loop: true; dur: 2000; easing: easeInOutSine"></a-box>
 
     <!-- 2. Teks Nama & NIM -->
-    <a-text value="Dinda Aulia - 2309020297" position="0 2.8 -3" align="center" color="#222222" width="6"></a-text>
+    <a-text value="Dinda Aulia - 2309020297" position="0 2.8 -3" align="center" color="#2c3e50" width="6"></a-text>
 
-    <!-- 3. Lantai (a-plane) dan Langit (a-sky) -->
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="8" height="8" color="#7BC8A4"></a-plane>
-    <a-sky color="#ECECEC"></a-sky>
+    <!-- 3. Lantai dan Langit dengan Nuansa Berbeda -->
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="10" height="10" color="#34495e"></a-plane>
+    <a-sky color="#f1c40f"></a-sky>
   </a-scene>
 </body>
 </html>
