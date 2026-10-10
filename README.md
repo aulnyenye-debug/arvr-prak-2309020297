@@ -10,12 +10,13 @@
 ## Jawaban Pertanyaan Refleksi
 
 ### 1. Mengapa posisi objek yang terlihat pertama kali oleh pengguna memakai nilai z negatif?
-Dalam sistem koordinat 3D A-Frame, kamera pengguna awal mulanya berada di titik asal `(0, 0, 0)` dan menghadap ke arah sumbu **Z negatif**. Oleh karena itu, agar suatu objek dapat berada tepat di depan pandangan mata pengguna saat pertama kali memuat halaman, posisi koordinat Z objek tersebut harus diberi nilai negatif (seperti `-3` atau `-5`). Jika nilai Z bernilai positif, objek akan berada di belakang pandangan pengguna.
+Karena dari sananya di A-Frame, posisi awal kamera kita itu ada di titik `(0, 0, 0)` dan hadapnya ke depan lewat sumbu **Z negatif**. Makanya, kalau mau objeknya pas kelihatan di depan mata waktu web pertama kali dibuka, koordinat Z-nya harus minus (misal `-3` atau `-5`). Kalau kita isi positif, objeknya malah bakal ada di belakang kita, jadi nggak kelihatan apa-apa.
 
 ### 2. Mengapa WebXR hanya aktif pada HTTPS atau localhost?
-Sebab WebXR API memerlukan akses langsung ke perangkat keras sensor sensitif (seperti sensor pelacakan gerak, kamera, dan kacamata VR). Demi alasan keamanan dan privasi data pengguna, browser membatasi WebXR API agar **hanya boleh berjalan di lingkungan aman (Secure Context)** yaitu protokol **HTTPS** saat online, atau pada **`localhost` / `127.0.0.1`** untuk pengembangan lokal.
+Karena WebXR ini kan berhubungan langsung sama hardware sensitif kayak sensor gerak HP/laptop, kamera, atau headset VR. Demi keamanan dan privasi data kita biar nggak sembarangan diakses situs web, browser bikin aturan ketat: fitur WebXR cuma diizinkan jalan di tempat yang aman, yaitu pakai protokol HTTPS atau pas lagi dites lokal pakai `localhost`.
 
 ### 3. Jelaskan perbedaan peran WebXR Device API, three.js, dan A-Frame dengan bahasa Anda sendiri.
-* **WebXR Device API:** Standar/API bawaan browser untuk menjembatani komunikasi langsung antara web dengan perangkat keras VR/AR (kacamata VR dan *controller*).
-* **three.js:** Pustaka (*library*) JavaScript tingkat menengah untuk mengolah grafis 3D (pembuatan objek, material, pencahayaan) dengan lebih mudah tanpa menulis kode WebGL murni dari awal.
-* **A-Frame:** Kerangka kerja (*framework*) tingkat tinggi berbasis HTML buatan Mozilla yang membungkus three.js dan WebXR Device API, sehingga kita bisa membangun scene 3D/VR secara deklaratif menggunakan tag HTML seperti `<a-scene>` dan `<a-box>`.
+Gampangnya kita bagi jadi tiga tingkatan:
+- **WebXR Device API:** Ini yang paling dasar/bawaan dari browser, tugasnya jadi jembatan penghubung antara kodingan kita sama perangkat keras VR/AR yang kita pakai.
+- **three.js:** Ini library JavaScript yang ngebantu kita bikin dan ngurusin grafik 3D (kayak bentuk objek, cahaya, warna) biar nggak perlu nulis kode WebGL mentah dari nol yang ribet banget.
+- **A-Frame:** Ini yang paling gampang dan paling tinggi tingkatannya. Dibuat pakai dasar HTML, jadi kita tinggal pakai tag-tag simpel kayak `<a-box>` atau `<a-sphere>` buat bikin objek 3D, karena di baliknya udah dibungkus rapi pakai three.js dan WebXR.
